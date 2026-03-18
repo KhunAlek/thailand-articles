@@ -76,9 +76,36 @@
     .site-header {
       border-top: 5px solid var(--ink);
       border-bottom: 3px double var(--ink);
-      padding: 48px 0 40px;
+      padding: 64px 24px 52px;
       text-align: center;
       margin-bottom: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/khunalek-og.png');
+      background-size: cover;
+      background-position: center 40%;
+      filter: sepia(15%) contrast(1.05);
+    }
+
+    .site-header-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(245, 240, 232, 0.55) 0%,
+        rgba(245, 240, 232, 0.72) 50%,
+        rgba(245, 240, 232, 0.92) 100%
+      );
+    }
+
+    .site-header-content {
+      position: relative;
+      z-index: 2;
     }
 
     .avatar-wrap {
@@ -283,11 +310,15 @@
 <div class="page">
 
   <header class="site-header">
-    <div class="avatar-wrap">
-      <img src="images/khunalek.jpg" alt="Khun Alek">
+    <div class="site-header-bg"></div>
+    <div class="site-header-overlay"></div>
+    <div class="site-header-content">
+      <div class="avatar-wrap">
+        <img src="images/khunalek.jpg" alt="Khun Alek">
+      </div>
+      <h1 class="site-title">Учителя<br>в Таиланде</h1>
+      <p class="site-tagline">Заметки об иностранцах в тайских школах</p>
     </div>
-    <h1 class="site-title">Учителя<br>в Таиланде</h1>
-    <p class="site-tagline">Заметки об иностранцах в тайских школах</p>
   </header>
 
   <div class="section-label"><span>Все статьи</span></div>
